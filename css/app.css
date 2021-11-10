@@ -1,0 +1,470 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+
+    line-height: 2; /* INTERLINEADO*/
+}
+
+/* Globales */
+h1, 
+h2, 
+h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 5rem 0; /* Por default todos los heading o h1,2,3,4,5 tienen margenes por lo que lo quitamos
+    
+    colocandole margin 0
+    
+    */
+}
+
+
+
+h1{
+
+    font-size: 5rem;
+
+}
+
+h2{
+
+    font-size:4rem;
+}
+
+h3{
+
+
+    font-size: 3rem;
+
+}
+
+
+a{
+
+    text-decoration: none;
+    color: #000;
+
+
+}
+
+.contenedor{
+
+    max-width: 120rem;
+    margin: 0 auto;
+
+
+}
+
+img{ /* PARA CREAR IMAGENES RESPONSIVE */
+
+    max-width: 100%;
+    display: block;
+ 
+}
+
+
+.btn{
+    background-color: #8cbc00;
+    display: block;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-out ;
+    text-align: center;
+    border: none;
+    width: 100%;
+    /*transition: background-color .3s ease-out ; /* diciendole que vamos a crear una transition a la prpiedad
+    
+    de background-color con una duracion de 3segundos y la animacion va a hacer ease 
+    
+    */
+
+ 
+
+
+
+}
+
+.btn:hover{
+
+
+    background-color: #769c02;
+    cursor: pointer;
+
+
+
+}
+
+
+
+
+/* Utilidades*/
+
+
+.text-center{
+
+    text-align: center;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header y navegacion */
+
+.nombre-sitio{
+
+    margin-top: 5rem;
+
+    text-align: center;
+
+}
+
+
+.contenedor-navegacion{
+
+    border-top: .1rem solid #e1e1e1;
+  
+}
+
+.nav-principal{
+
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.hero{
+
+    background-image: url('../img/principal.jpg');
+    background-repeat: no-repeat;
+
+    background-size: cover; /* background-size hace que cubra todo el espacio disponible*/
+
+
+/* background-position: 1px 1px ; /* toma 2 valores que podemos especificar en la x , es decir de izquierda a derecha 
+    
+    o de derecha a izq y de arriba hacia abajo la posicion 
+    
+    */
+
+    background-position: center center ;
+
+
+    height: 55rem;
+
+}
+
+
+/* Categorias */
+
+
+.categorias{
+
+    padding-top: 5rem;
+
+
+}
+
+
+.categorias h2{
+
+    text-align: center;
+    
+}
+
+.categoria a {
+
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    font-size: 2rem;
+
+}
+
+
+.categoria a:hover{
+
+    background-color: #037bc0;
+    color: #ffffff;
+    border-bottom-right-radius: 1rem;
+
+}
+
+.listado-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+
+/** Bloque Nosotros */
+
+.sobre-nosotros {
+    background-image: linear-gradient( to right , transparent 50%, #037bc0 50%, #037bc0 100% ), url(../img/nosotros.jpg);
+
+    /*
+ 
+    linear-gradientv es un degradado linear comienzan siempre con background-image 
+
+ background-image: linear-gradient( to bottom) , le colocamos el primer valor indicandole hacia donde va 
+ a correr el degradado , en este caso le colocamos hacia la derecha o tambien le podemos colocar top bottom
+ que significa de arribas hacia abajo o top left , de izq a derecha 
+
+ el segundo valor es el color o degradado que queremos utilizar  especificandole el porcentaje de visualizacion de color 
+ en este caso le especificamos 50% que significa que de 0 al 50 % va  a hacer negro 
+
+    
+    
+    */
+
+    padding:10rem  0;
+    
+    background-position: center, top left;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+}
+
+
+.sobre-nosotros-grid{
+
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+
+/* 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+    column-gap: 10rem; */
+
+}
+
+.texto-nosotros{
+
+        grid-column: 2/3; /* posicionando el elemento de la linea 2 a la 3*/
+        padding-left: 10rem;
+
+        color: #fff;
+}
+
+
+/* Listado de productos*/
+
+.contenido-principal{
+
+    padding-top: 5rem;
+
+
+}
+
+
+.listado-productos{
+
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 2rem;
+/* row-gap: 2rem; /* separacion hacia abajo */
+
+}
+
+.producto:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.producto:nth-child(1) img {
+
+    height: 43rem; /* para que object-fit funcione y se note , tenenmos que darle un alto y un ancho a la imagen */
+    width: 100%;
+    object-fit: cover;
+}
+.producto:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.producto:nth-child(2) img,
+.producto:nth-child(3) img {
+    height: 30rem; /* para que object-fit funcione y se note , tenenmos que darle un alto y un ancho a la imagen */
+    width: 100%;
+    object-fit: cover;
+}
+.producto:nth-child(3) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+.producto:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.producto:nth-child(5) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.producto:nth-child(6) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+
+}
+
+
+
+
+
+
+.producto{
+
+    background-color: #037bc0;
+    margin-bottom: 2rem;
+
+}
+
+
+.texto-producto{
+
+
+    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+
+.texto-producto h3{
+
+    margin: 0; /* eliminando el margin que trae por default los heading */
+
+
+}
+
+.texto-producto p{
+
+    margin: 0 0 .5rem 0; /* eliminando el margin que trae por default los parrafos */
+
+
+}
+
+
+.texto-producto .precio{
+
+
+    font-size: 2.8rem;
+    font-weight: 900;
+
+
+}
+
+
+
+.producto img:hover{
+
+       /* transform: scale(.8); */
+       
+
+}
+
+
+
+/* Footer */
+
+
+.site-footer{
+
+    border-top: 10px solid #e1e1e1 ; /* toma 3 valores, el primero el ancho del bolde , el tipo del bolder y el color del borde*/
+    margin-top: 5rem;
+    padding-top: 5rem;
+
+
+}
+
+
+
+.site-footer h3{
+
+    margin-bottom: .5rem;
+
+}
+
+.copyright{
+
+    margin-top: 5rem;
+    text-align: center;
+
+
+}
+
+.grid-footer{
+
+    display: flex;
+    gap: 2rem;
+
+
+
+}
+
+.grid-footer div { /* se coloca grid ya que el primer hijo del grid footer es un div */
+
+    flex: 1; /* creciendo el elemento para que cada uno tome su espaci o*/
+    
+}
+
+
+.footer-menu a{
+
+    display: block; /* tomando todo el ancho dispoinible y colocando los enlaces uno debajo del otro
+    
+    ya que por defecto vienen como display inline, es decir uno del lado del otro 
+    
+    */
+
+}
+
+/* Nosotros*/
+
+
+.contenido-nosotros{
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    grid-template-columns: repeat(auto-fit, minmax(25rem ,1fr)); /* auto-fit > hace que el contenido 
+    
+    se acomode automaticcamente , mimax que toma como valor el minimo  y el maximo 
+
+    el minimo va a hacer 25rem ccuando sea menor a 25pixeles , y luego toma un 1fr, es decir lo que hace es 
+
+    que si el contenido de la imagen mide mas de 250 pixeles le da un 1fr a cada uno de ellos 
+    
+    */
+
+    gap: 2rem;
+
+}
+
+.informacion-nosotros{
+
+    display: flex;
+    flex-direction: column;
+
+
+
+}
